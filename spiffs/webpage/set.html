@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>knob set</title>
+</head>
+
+<body>
+    <style>
+        .topbar {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            width: 90%;
+            padding: 10px;
+            background: linear-gradient(-30deg, #e81cff 0%, #40c9ff 100%);
+            text-align: center;
+            border-radius: 40px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            font-size: 4em;
+            font-weight: 900;
+            font-family: 'Times New Roman';
+        }
+
+        .card {
+            padding: 10px;
+            width: 540px;
+            margin-left: 20px;
+            height: 380px;
+            opacity: 80%;
+            background-color: #b7e7ab;
+            border-radius: 20px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            overflow: hidden;
+            /* 隐藏溢出内容 */
+        }
+
+        .card h1 {
+            margin-left: 30PX;
+        }
+
+        .button {
+            margin-top: 22px;
+            background-color: #049f95;
+            width: 100px;
+            height: 40px;
+            border-radius: 20px;
+        }
+
+        .button h2 {
+            margin-top: 4px;
+            color: #000;
+        }
+
+        /* 鼠标悬停效果 */
+        .button:hover {
+            background-color: #45a049;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+            /* 悬停时的阴影 */
+        }
+
+        /* 按钮点击效果 */
+        .button:active {
+            background-color: #3d8b40;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* 点击时的阴影 */
+        }
+
+        /* 禁用状态 */
+        .button:disabled {
+            background-color: #cccccc;
+            color: #666666;
+            cursor: not-allowed;
+            /* 禁用时的鼠标指针样式 */
+            box-shadow: none;
+            /* 移除阴影 */
+        }
+
+        /* 板块大标题 */
+        .titol {
+            /* 网格布局 */
+            display: grid;
+            grid-template-columns: 390px 100px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 600px 600px 600px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+                width: 94%;
+                max-width: 100%;
+            }
+
+        }
+    </style>
+
+    <div style="  place-items: center;">
+        <div class="topbar">KNOB旋钮 设置</div>
+
+        <style>
+            .inputbox {
+                padding: 2px 20px 2px 20px;
+                margin-top: 13px;
+                border: 2px solid #ccc;
+                /* 边框 */
+                width: 160px;
+                height: 24px;
+                border-radius: 12px;
+            }
+        </style>
+
+        <drv class="container">
+            <drv class="card" style="height: 480px;">
+                <drv class="titol">
+                    <h1>WIFI配置</h1>
+                    <button class="button">
+                        <h2>提交 </h2>
+                    </button>
+                </drv>
+
+                <drv style="display: grid; grid-template-columns:80px 180px 240px">
+                    <drv></drv>
+                    <drv>
+                        <h3>STA Wi-Fi 账号 </h3>
+                        <h3>STA Wi-Fi 密码 </h3>
+                        <h3>AP Wi-Fi 账号 </h3>
+                        <h3>AP Wi-Fi 密码 </h3>
+                    </drv>
+                    <drv>
+                        <input class="inputbox" type="text" id="wifiUsername" name="wifiUsername" required>
+                        <br>
+                        <input class="inputbox" type="password" id="wifiPassword" name="wifiPassword" required>
+                        <br>
+                        <input class="inputbox" type="text" id="lampmac" name="wifiPassword" required>
+                        <br>
+                        <input class="inputbox" type="password" id="lampmac" name="wifiPassword" required>
+                        <br>
+                    </drv>
+                </drv>
+                <drv style="display: grid; grid-template-columns:50px 120px 80px 50px 120px 80px">
+                    <drv></drv>
+                    <h3>WIFI-STA</h3>
+                    <label class="switch">
+                        <input type="checkbox" id="toggleSwitch" name="toggleSwitch">
+                        <span class="slider round"></span>
+                    </label>
+                    <drv></drv>
+                    <h3>WIFI-AP</h3>
+                    <label class="switch">
+                        <input type="checkbox" id="toggleSwitch" name="toggleSwitch">
+                        <span class="slider round"></span>
+                    </label>
+                </drv>
+            </drv>
+
+            <drv class="card">
+                <drv class="titol">
+                    <h1>智能家居配置</h1>
+                    <button class="button">
+                        <h2>提交 </h2>
+                    </button>
+                </drv>
+                <drv style="display: grid; grid-template-columns:80px 180px 240px">
+                    <drv></drv>
+                    <drv>
+                        <h3>台灯-MAC </h3>
+                        <h3>桌面电源-MAC</h3>
+                        <h3>氛围灯-MAC </h3>
+                        <h3>音响-MAC</h3>
+                    </drv>
+                    <drv>
+                        <input class="inputbox" type="text" id="wifiUsername" name="wifiUsername" required>
+                        <br>
+                        <input class="inputbox" type="password" id="wifiPassword" name="wifiPassword" required>
+                        <br>
+                        <input class="inputbox" type="text" id="lampmac" name="wifiPassword" required>
+                        <br>
+                        <input class="inputbox" type="password" id="lampmac" name="wifiPassword" required>
+                        <br>
+                    </drv>
+                </drv>
+
+            </drv>
+            <style>
+                /* 开关样式 */
+                .switch {
+                    position: relative;
+                    display: inline-block;
+                    width: 60px;
+                    height: 34px;
+                    margin-top: 12px;
+                }
+
+                .switch label {
+                    margin-top: 40px;
+                    float: left;
+                }
+
+                .switch input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                }
+
+                .slider {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #ccc;
+                    transition: .4s;
+                    border-radius: 34px;
+                }
+
+                .slider:before {
+                    position: absolute;
+                    content: "";
+                    height: 26px;
+                    width: 26px;
+                    left: 4px;
+                    bottom: 4px;
+                    background-color: white;
+                    transition: .4s;
+                    border-radius: 50%;
+                }
+
+                input:checked+.slider {
+                    background-color: #049f95;
+                }
+
+                input:focus+.slider {
+                    box-shadow: 0 0 1px #049f95;
+                }
+
+                input:checked+.slider:before {
+                    transform: translateX(26px);
+                }
+
+                /* 圆形滑块 */
+                .slider.round {
+                    border-radius: 34px;
+                }
+
+                .slider.round:before {
+                    border-radius: 50%;
+                }
+            </style>
+            <drv class="card" style=" height: 600px">
+                <drv class="titol">
+                    <h1>旋钮设置</h1>
+                    <button class="button">
+                        <h2>提交 </h2>
+                    </button>
+                </drv>
+                <drv style="display: grid; grid-template-columns:50px 120px 80px 50px 120px 80px">
+                    <drv></drv>
+                    <drv>
+                        <h3>RGB灯 </h3>
+                        <h3>音频 </h3>
+                        <h3>NFC </h3>
+                        <h3>陀螺仪 </h3>
+                    </drv>
+                    <drv>
+                        <label class="switch">
+                            <input type="checkbox" id="toggleSwitch" name="toggleSwitch">
+                            <span class="slider round"></span>
+                        </label>
+                        <br>
+                        <label class="switch">
+                            <input type="checkbox" id="toggleSwitch" name="toggleSwitch">
+                            <span class="slider round"></span>
+                        </label>
+                        <br>
+                        <label class="switch">
+                            <input type="checkbox" id="toggleSwitch" name="toggleSwitch">
+                            <span class="slider round"></span>
+                        </label>
+                        <br>
+                        <label class="switch">
+                            <input type="checkbox" id="toggleSwitch" name="toggleSwitch">
+                            <span class="slider round"></span>
+                        </label>
+                    </drv>
+                    <drv></drv>
+                    <drv>
+                        <h3>休眠 </h3>
+                        <h3>HID </h3>
+                        <h3>MQTT </h3>
+                        <h3>HASS </h3>
+                    </drv>
+                    <drv>
+                        <label class="switch">
+                            <input type="checkbox" id="toggleSwitch" name="toggleSwitch">
+                            <span class="slider round"></span>
+                        </label>
+                        <br>
+                        <label class="switch">
+                            <input type="checkbox" id="toggleSwitch" name="toggleSwitch">
+                            <span class="slider round"></span>
+                        </label>
+                        <br>
+                        <label class="switch">
+                            <input type="checkbox" id="toggleSwitch" name="toggleSwitch">
+                            <span class="slider round"></span>
+                        </label>
+                        <br>
+                        <label class="switch">
+                            <input type="checkbox" id="toggleSwitch" name="toggleSwitch">
+                            <span class="slider round"></span>
+                        </label>
+                    </drv>
+                </drv>
+                <style>
+                    .volume-control {
+                        margin-top: 20px;
+                        margin-left: 30px;
+                        font-size: 16px;
+                        font-family: Arial, sans-serif;
+                    }
+
+                    .volume-control input {
+                        width: 280px;
+                        height: 40px;
+                        margin-top: 6px;
+                    }
+
+                    #volume-value {
+                        margin-left: 10px;
+                        font-weight: bold;
+                        color: #049f95;
+                    }
+                </style>
+                <div class="volume-control" style="display: grid; grid-template-columns:50px 120px 300px">
+                    <drv></drv>
+                    <drv>
+                        <h3>屏幕亮度</h3>
+                        <h3>音频音量</h3>
+                        <h3>RGB亮度</h3>
+                    </drv>
+                    <drv>
+                        <input type="range" id="volume" name="volume" min="0" max="100" value="50">
+                        <input type="range" id="volume" name="volume" min="0" max="100" value="50">
+                        <input type="range" id="volume" name="volume" min="0" max="100" value="50">
+                    </drv>
+                </div>
+            </drv>
+        </drv>
+        <drv class="container">
+            <drv class="card" style="margin-top: -80px; height:500px">
+                <drv class="titol">
+                    <h1>蓝牙配置</h1>
+                    <button class="button">
+                        <h2>提交 </h2>
+                    </button>
+                </drv>
+            </drv>
+            <drv class="card" style="margin-top: -180px; height:600px">
+                <drv class="titol">
+                    <h1>NFC配置</h1>
+                    <button class="button">
+                        <h2>提交 </h2>
+                    </button>
+                </drv>
+            </drv>
+            <drv class="card" style="margin-top: 40px; height:380px">
+                <drv class="titol">
+                    <h1>关于旋钮</h1>
+                </drv>
+                <drv style="display: grid; grid-template-columns:50px 120px 200px">
+                    <drv></drv>
+                    <drv>
+                        <h3>设备名称:</h3>
+                        <h3>系统版本:</h3>
+                        <h3>序列编码:</h3>
+                        <h3>激活状态:</h3>
+                        <h3>MAC地址:</h3>
+                    </drv>
+                    <drv>
+                        <h3>智能旋钮模块</h3>
+                        <h3>V25.2.0.1</h3>
+                        <h3>SAD7898FDD0F9S89</h3>
+                        <h3>成功激活</h3>
+                        <h3>F0:F5:BD:51:E8:FC</h3>
+                    </drv>
+                </drv>
+            </drv>
+        </drv>
+    </div>
+</body>
+
+</html>

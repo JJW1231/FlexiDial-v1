@@ -1,0 +1,34 @@
+idf_component_register(
+    SRC_DIRS 
+        "."
+        "driver/power"
+        "driver/rgb"
+        "driver/button"
+        "driver/motor"
+        "driver/display"
+        "driver/gyro"
+        "driver/hid"
+        "driver/audio"
+        "ui"
+        "ui/screens"
+        "ui/images"
+        "ui/fonts"
+        "ui/events"
+    
+    INCLUDE_DIRS 
+        "."
+        "driver/power"
+        "driver/rgb"
+        "driver/button"
+        "driver/motor"
+        "driver/display"
+        "driver/gyro"
+        "driver/hid"
+        "driver/audio"
+        "ui"
+        "ui/screens"
+        "ui/images"
+        "ui/fonts"
+        "ui/events"
+)
+# spiffs_create_partition_image(spiffs ../spiffs FLASH_IN_PROJECT)

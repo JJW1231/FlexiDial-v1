@@ -1,0 +1,2 @@
+source D:/aproject/esp-idf/FlexiDial-v1/build/gdbinit/symbols
+source D:/aproject/esp-idf/FlexiDial-v1/build/gdbinit/connect
