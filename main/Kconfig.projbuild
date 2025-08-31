@@ -1,0 +1,98 @@
+menu "Xiaozhi Assistant"
+
+config OTA_VERSION_URL
+    string "OTA Version URL"
+    default "https://api.tenclass.net/xiaozhi/ota/"
+    help
+        The application will access this URL to check for updates.
+
+
+choice
+    prompt "语言选择"
+    default LANGUAGE_ZH_CN
+    help
+        Select device display language
+
+    config LANGUAGE_ZH_CN
+        bool "Chinese"
+    config LANGUAGE_ZH_TW
+        bool "Chinese Traditional"
+    config LANGUAGE_EN_US
+        bool "English"
+    config LANGUAGE_JA_JP
+        bool "Japanese"
+endchoice
+
+
+choice CONNECTION_TYPE
+    prompt "Connection Type"
+    default CONNECTION_TYPE_MQTT_UDP
+    help
+        网络数据传输协议
+    config CONNECTION_TYPE_MQTT_UDP
+        bool "MQTT + UDP"
+    config CONNECTION_TYPE_WEBSOCKET
+        bool "Websocket"
+endchoice
+
+config WEBSOCKET_URL
+    depends on CONNECTION_TYPE_WEBSOCKET
+    string "Websocket URL"
+    default "wss://api.tenclass.net/xiaozhi/v1/"
+    help
+        Communication with the server through websocket after wake up.
+
+config WEBSOCKET_ACCESS_TOKEN
+    depends on CONNECTION_TYPE_WEBSOCKET
+    string "Websocket Access Token"
+    default "test-token"
+    help
+        Access token for websocket communication.
+
+choice BOARD_TYPE
+    prompt "Board Type"
+    default BOARD_TYPE_FLEXI_DIAL_V1
+    help
+        Board type. 开发板类型
+    config BOARD_TYPE_FLEXI_DIAL_V1
+        bool "灵活旋钮v1"
+endchoice
+
+choice DISPLAY_OLED_TYPE
+    depends on BOARD_TYPE_BREAD_COMPACT_WIFI || BOARD_TYPE_BREAD_COMPACT_ML307 || BOARD_TYPE_BREAD_COMPACT_ESP32
+    prompt "OLED Type"
+    default OLED_SSD1306_128X32
+    help
+        OLED 屏幕类型选择
+    config OLED_SSD1306_128X32
+        bool "SSD1306, 分辨率128*32"
+    config OLED_SSD1306_128X64
+        bool "SSD1306, 分辨率128*64"
+endchoice
+
+choice DISPLAY_LCD_TYPE
+    depends on BOARD_TYPE_BREAD_COMPACT_WIFI_LCD
+    prompt "LCD Type"
+    default LCD_GC9A01_240X240
+    help
+        屏幕类型选择
+    config LCD_GC9A01_240X240
+        bool "GC9A01, 分辨率240*240, 圆屏"
+    config LCD_CUSTOM
+        bool "自定义屏幕参数"
+endchoice
+
+config USE_AUDIO_PROCESSOR
+    bool "启用音频降噪、增益处理"
+    default y
+    depends on IDF_TARGET_ESP32S3 && USE_AFE
+    help
+        需要 ESP32 S3 与 AFE 支持
+
+config USE_WAKE_WORD_DETECT
+    bool "启用唤醒词检测"
+    default y
+    depends on IDF_TARGET_ESP32S3 && USE_AFE
+    help
+        需要 ESP32 S3 与 AFE 支持
+endmenu

@@ -78,7 +78,7 @@ void *dl_lib_calloc_psram(int cnt, int size, int align);
 /**
  * @brief Free aligned memory allocated by `dl_lib_calloc` or `dl_lib_calloc_psram` 
  * 
- * @param ptr    Pointer to free
+ * @param prt    Pointer to free
  */
 void dl_lib_free(void *ptr);
 

@@ -1,16 +1,8 @@
 # Change log for esp-sr
 
-## 2.0.2
-- Accelerate the AEC of ESP32C5, reducing the CPU loading from 39% to 30%.
-
-## 2.0.1
-- Add `afe_aec_create`, `afe_aec_destroy`, `afe_aec_process` interface
-
-## 2.0.0
-- Add vadnet1_medium model
-- Refactor AFE interface. Note AFE v2.0 is not compatible with previous versions
-- Add esp32c5 AEC support
-- Add some new wake words
+## Known issues: 
+- Available storage is less than the remaining flash space on IDF v5.0.   
+If you can not map model partition successfully, please check the left free storage by `spi_flash_mmap_get_free_pages(ESP_PARTITION_MMAP_DATA)` or update IDF to v5.1 or later.
 
 ## 1.9.5
 - Add Hi,Jason; 小鸭小鸭; 璃奈板 wake word models

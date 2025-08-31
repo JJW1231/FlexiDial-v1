@@ -57,16 +57,8 @@ void check_chip_config(void)
     ESP_LOGW(TAG, "PSRAM freq should be 200MHz");
 #endif
 
-#ifdef CONFIG_ESP32P4_DATA_CACHE_128KB
-    ESP_LOGW(TAG, "Recommend data cache larger than 128KB");
-#endif
-
-#ifdef CONFIG_ESP32P4_DATA_CACHE_LINE_64B
-    ESP_LOGW(TAG, "Recommend data cache line larger than 64B");
-#endif
-
 #else
-    ESP_LOGW(TAG, "ESP-SR-AFE only support ESP32/ESP32S3/ESP32P4");
+    ESP_LOGW(TAG, "ESP-SR-AFE only support ESP32/ESP32S3");
 #endif
 }
 
@@ -484,7 +476,7 @@ char *get_id_name_cn(int i)
 
 char *get_id_name_en(int i)
 {
-#if CONFIG_SR_MN_EN_MULTINET5_SINGLE_RECOGNITION_QUANT8
+#if defined CONFIG_USE_MULTINET && defined CONFIG_SR_MN_EN_MULTINET5_SINGLE_RECOGNITION_QUANT8
     if (i == 0) {
         return CONFIG_EN_SPEECH_COMMAND_ID0;
     } else if (i == 1) {

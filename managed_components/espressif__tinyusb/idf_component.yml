@@ -5,11 +5,11 @@ documentation: https://docs.tinyusb.org/en/latest/
 issues: https://github.com/hathach/tinyusb/issues
 repository: git://github.com/espressif/tinyusb.git
 repository_info:
-  commit_sha: 82a7a644ccbe5a38c725517ca3baf0703f90b2fb
+  commit_sha: 4095aba50e97e84b944693b38ab58b54e14bd311
   path: .
 targets:
 - esp32s2
 - esp32s3
 - esp32p4
 url: https://docs.tinyusb.org/en/latest/
-version: 0.18.0~1
+version: 0.18.0~2

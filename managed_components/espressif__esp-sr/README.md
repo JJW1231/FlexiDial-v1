@@ -12,7 +12,6 @@ ESP-SR framework includes the following modules:
 
 * [Audio Front-end AFE](https://docs.espressif.com/projects/esp-sr/en/latest/esp32s3/audio_front_end/README.html)
 * [Wake Word Engine WakeNet](https://docs.espressif.com/projects/esp-sr/en/latest/esp32s3/wake_word_engine/README.html)
-* [VAD VADNet](https://docs.espressif.com/projects/esp-sr/en/latest/esp32s3/vadnet/README.html)
 * [Speech Command Word Recognition MultiNet](https://docs.espressif.com/projects/esp-sr/en/latest/esp32s3/speech_command_recognition/README.html)
 * [Speech Synthesis](https://docs.espressif.com/projects/esp-sr/en/latest/esp32s3/speech_synthesis/readme.html)
 
@@ -21,11 +20,6 @@ These algorithms are provided in the form of a component, so they can be integra
 ESP32-S3/ESP32-P4 are recommended, which support AI instructions and larger, high-speed octal SPI PSRAM.
 The new algorithms will no longer support ESP32 chips.
 
-News
-----
-
-[14/2/2025]: We release **ESP-SR V2.0**. [Migration from ESP-SR V1.* to ESP-SR V2.*](https://docs.espressif.com/projects/esp-sr/en/latest/esp32s3/audio_front_end/migration_guide.html)   
-[13/2/2025]: We release **VADNet**, a voice activaty detection model. You can use it to replace the WebRTC VAD and improve the performance.
 
 ## Wake Word Engine
 
@@ -66,9 +60,6 @@ The following wake words are supported in esp-sr:
 |Hi,小巫          |                                        | wn9_haixiaowu_tts      |
 |小鸭小鸭         |                                        | wn9_xiaoyaxiaoya_tts2  |
 |璃奈板           |                                        | wn9_linaiban_tts2      |
-|小酥肉           |                                        | wn9_xiaosurou_tts2      |
-|小宇同学         |                                        | wn9_xiaoyutongxue_tts2  |
-|小明同学         |                                        | wn9_xiaomingtongxue_tts2|
 
 *NOTE:* `_tts` suffix means this WakeNet model is trained by TTS samples. `_tts2` suffix means this WakeNet model is trained by TTS Pipeline V2.
 

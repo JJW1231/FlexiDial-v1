@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "ESP-IDF",
+            "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**"
             ],
